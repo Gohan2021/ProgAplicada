@@ -2,7 +2,8 @@
 ## Introducción
 El proyecto consiste en una aplicación que permita monitorear el estado de salud de mascotas (perros y gatos) en tiempo real, parametros como la presión arterial, ritmo cardiaco y respiratorio. Se proponen dos prototipos, el primero consiste en la implantación de un microchip tipo sensor que será colocado en la zona femural de la mascota, puesto que allí es un punto clave para la toma de los parametros fisiologicos pero que posee grandes dificultades para el diseño electrónico debido a que actualmente no existe tecnología del tamaño requerido para integrar un modulo bluethoot y sensor en un mismo microchip, pero que por temas de comodidad y efectivad seria el prototipo ideal, sin embargo se propone la alternativa de una "pulsera" la cual por temas de espacio posee la ventaja de integrar en ella el sistema de detección de los signos vitales, por lo que inicialmente so optaría por emplear este prototipo, y luego a traves de que la tecnología se miniaturice aún más emplear el prototipo de implantación de microchip.
 
-El funcionamiento del sistema consiste en un sensor que permitirá leer los parámetros fisológicos tales como; La presión arterial, la frecuencia cardiaca y respiratoria, que su a vez va integrado con módulo bluethoot que permitirá la comunicación entre el sistema y la aplicacion. A continuación se detalla las variables fisiológicas a monitorear 
+El funcionamiento del sistema consiste en un sensor que permitirá leer los parámetros fisológicos tales como; La presión arterial, la frecuencia cardiaca y respiratoria, que su a vez va integrado con módulo bluethoot que permitirá la comunicación entre el sistema y la aplicacion. A continuación se detalla las variables fisiológicas a monitorear [Signos vitales de caninos y felinos](https://ateuves.es/parametros-fisiologicos-en-perros-y-gatos/#prettyPhoto/0/). 
+![Procedimiento](https://stories.freepiklabs.com/storage/16179/Animal-Shelter-01.svg)
 
 ### Variables fisiológicas
 * #### Presión Arterial: 
@@ -24,16 +25,10 @@ que en pocas palabras es un sistema que le permite al dueño programar la comida
 + Microchip; Consiste en una implantación de un microchip a la mascota con el fin de que posea un número único que puede ser leido cuando se encuentre perdida la mascota, sin embargo no cuenta con mucha cobertura y solo puede ser detectado con equipos situados en veterinarios o citios especializados. (Tractive, 2022)
 
 ## Ventajas de VetVitals
-  VetVitals es efectivo para detectar anomalías en los signos vitales de tu mascota, ya que teniendo información de las variables fisiologicas como la presión arterial que puede indicar si la mascota está hipertenso o hipotenso, lo que puede darnos un aviso de que la mascota puede presentar deshidratación, o un fallo en algún organo, al igual que otro tipo de patologías a partir de la información de los signos vitales. Lo que nos permite concluir que los signos vitales son fundamentales para una buena salud de las mascotas y que permite a los veterinarios tener una información más detallada de como se encuentran las mascotas para un previo análisis.
+  VetVitals es efectivo para detectar anomalías en los signos vitales de tu mascota, ya que teniendo información de las variables fisiologicas como la presión arterial que puede indicar si la mascota está hipertenso o hipotenso, lo que puede darnos un aviso de que la mascota puede presentar deshidratación, o un fallo en algún organo, al igual que otro tipo de patologías a partir de la información de los signos vitales. Lo que nos permite concluir que los signos vitales son fundamentales para una buena salud de las mascotas y que permite a los veterinarios tener una información más detallada de como se encuentran las mascotas para un previo análisis. (T. Mahecha, 2021)
 
-![Procedimiento](https://stories.freepiklabs.com/storage/16179/Animal-Shelter-01.svg)
-
-## Indice
-* Primera semana 
-  1. Virtual
-    - Chat gtp
-    - Replit
-    - Python
-  2. Computador
-  3. Cuaderno 
-* Segunda semana
+## Referencias
+* Tractive(octubre 2022)Resumen de las diferencias entre un localizador para perros y un microchip, https://tractive.com/blog/es/seguridad/diferencias-microchip-para-perros-y-tractive-gps
+* Tania Lorena Mahecha Montero(abril 2021) Análisis de los parámetros fisiológicos de monitoreo en pacientes caninos y
+felinos internados en la uci en la clínica veterinaria punto vet, MedellínColombia
+https://repository.ucc.edu.co/server/api/core/bitstreams/e7869a5f-6dd8-4e16-8e8f-8550f3d42da5/content
