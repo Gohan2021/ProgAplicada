@@ -1,8 +1,8 @@
-# PetVitals
+# VetVitals
 ## Introducción
 El proyecto consiste en una aplicación que permita monitorear el estado de salud de mascotas (perros y gatos) en tiempo real, parametros como la presión arterial, ritmo cardiaco y respiratorio. Se proponen dos prototipos, el primero consiste en la implantación de un microchip tipo sensor que será colocado en la zona femural de la mascota, puesto que allí es un punto clave para la toma de los parametros fisiologicos pero que posee grandes dificultades para el diseño electrónico debido a que actualmente no existe tecnología del tamaño requerido para integrar un modulo bluethoot y sensor en un mismo microchip, pero que por temas de comodidad y efectivad seria el prototipo ideal, sin embargo se propone la alternativa de una "pulsera" la cual por temas de espacio posee la ventaja de integrar en ella el sistema de detección de los signos vitales, por lo que inicialmente so optaría por emplear este prototipo, y luego a traves de que la tecnología se miniaturice aún más emplear el prototipo de implantación de microchip.
 
-El funcionamiento del sistema consiste en un sensor que permitirá leer los parámetros fisológicos tales como; La presión arterial, la frecuencia cardiaca y respiratoria, que su a vez va integrado con módulo bluethoot que permitirá la comunicación entre el sistema y la aplicacion. A continuación se detalla las variables fisiológicas a monitorear [Signos vitales de caninos y felinos](https://ateuves.es/parametros-fisiologicos-en-perros-y-gatos/#prettyPhoto/0/). 
+El funcionamiento del sistema consiste en un sensor que permitirá leer los parámetros fisológicos tales como; La presión arterial, la frecuencia cardiaca y respiratoria, que su a vez va integrado con módulo bluethoot que permitirá la comunicación entre el sistema y la aplicacion. Nótese los [Parametros fisiológicos en perros y gatos](https://ateuves.es/parametros-fisiologicos-en-perros-y-gatos/#prettyPhoto/0/). A continuación se detalla las variables fisiológicas a monitorear.  
 ![Procedimiento](https://stories.freepiklabs.com/storage/16179/Animal-Shelter-01.svg)
 
 ### Variables fisiológicas
@@ -32,3 +32,5 @@ que en pocas palabras es un sistema que le permite al dueño programar la comida
 * Tania Lorena Mahecha Montero(abril 2021) Análisis de los parámetros fisiológicos de monitoreo en pacientes caninos y
 felinos internados en la uci en la clínica veterinaria punto vet, MedellínColombia
 https://repository.ucc.edu.co/server/api/core/bitstreams/e7869a5f-6dd8-4e16-8e8f-8550f3d42da5/content
+* Ateuves(16 de octubre de 2015)Tabla con los parametros fisiologicos de perros y gatos 
+https://ateuves.es/parametros-fisiologicos-en-perros-y-gatos/#prettyPhoto/0/
