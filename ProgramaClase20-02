@@ -1,0 +1,43 @@
+##  Programa de ordenar
+
+def ordenar_csv(words:str)->str:
+    words_list = words.split(",")
+    #print(words_list)
+    #words_list.sort()
+    print(words_list)
+    
+    print(words_list)
+    new_list =[]
+    for palabra in words_list:
+        palabra_nueva = palabra.strip()
+        print(palabra,palabra_nueva)
+        new_list.append(palabra_nueva)
+        print(new_list)     
+    new_list.sort()
+    return ",".join(new_list)
+
+#uno,dos, tres, cuatro
+
+words = input("Ingresar palaras separadas por comas")
+print( ordenar_csv(words))
+
+
+
+## Programa de agregar
+
+def agregar_csv(words:str)->str:
+    words_list = words.split(",")
+    words_list.sort()
+    length = len(words_list)
+    #print(words_list)
+    if length > 2:
+        if words_list[-3:] == 'ing':
+          words_list += 'ly'
+        else:
+          words_list += 'ing'
+          
+    return words_list
+words = input("Ingresar palaras separadas por comas")
+print( agregar_csv(words))
+    
+# un, play, making    
