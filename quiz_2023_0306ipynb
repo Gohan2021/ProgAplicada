@@ -1,0 +1,114 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOtiOrrkBUZU25eaygd5ASh",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Gohan2021/ProgAplicada/blob/main/quiz_2023_0306ipynb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "A = [\"Carro\",\"Casa\",\"Perro\"]\n",
+        "salida = list(map(lambda x:x + x[-1],A))\n",
+        "salida "
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "WYXliVu7jMFh",
+        "outputId": "a60eecd4-da1a-4685-dc9e-49aa65bd99fb"
+      },
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "['Carroo', 'Casaa', 'Perroo']"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 2
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "A = [\"Carro\",\"Casa\",\"Perro\"]\n",
+        "salida = list(enumerate(filter(lambda x:x[-1] == \"o\",A)))\n",
+        "salida "
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "KiYQ26mxkOeR",
+        "outputId": "1450f054-f7d5-4047-a0b9-2d4210f8e72f"
+      },
+      "execution_count": 4,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[(0, 'Carro'), (1, 'Perro')]"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 4
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "A = [\"carro\",\"casa\",\"perro\"]\n",
+        "salida = list(map(lambda x:x[0] + x[1] == \"ca\",A))\n",
+        "salida\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "aU9BLDJrkbjk",
+        "outputId": "ba9aab6d-8824-4c64-d920-b93e20b0d6c4"
+      },
+      "execution_count": 32,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[True, True, False]"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 32
+        }
+      ]
+    }
+  ]
+}
