@@ -1,0 +1,117 @@
+<!-- Nicolas Moreno Ovalle - 20212005140 -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Modelo de un Cuy en blender con three.js</title>
+    <meta charset="utf-8">
+    <style>
+      * {
+        margin:0;
+        padding:0
+      }
+
+      body {
+        overflow:hidden;
+      }
+    </style>
+    <script type="importmap">
+      {
+          "imports": {
+              "three": "./js/three.module.js",
+              "GLTFLoader": "./js/GLTFLoader.js"
+          }
+      }
+    </script>
+  </head>
+  <body>
+    <script src="./js/OrbitControls.js" type="module"></script>
+    <script type="module">
+    import * as THREE from 'three';
+    import { GLTFLoader } from 'GLTFLoader';
+
+    const renderer = new THREE.WebGLRenderer();
+    const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 1, 1000);
+    const scene = new THREE.Scene();
+    let Mesh, light;
+    var player = { height:1.8, speed:0.2, turnSpeed:Math.PI*0.02 };
+    var meshFloor, mesh;
+    var keyboard = {};
+    var USE_WIREFRAME = false;
+
+    function init() {
+      scene.background = new THREE.Color('black');
+      // camera.position.set(0, 10, 20);
+	    meshFloor = new THREE.Mesh(
+		  new THREE.PlaneGeometry(10,10, 10,10),
+		  new THREE.MeshBasicMaterial({color:808080, wireframe:USE_WIREFRAME})
+	    );
+	    meshFloor.rotation.x -= Math.PI / 2; // Rotate the floor 90 degrees
+	    scene.add(meshFloor);	
+	    camera.position.set(0, player.height, -5);
+	    camera.lookAt(new THREE.Vector3(0,player.height,0));
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      document.body.appendChild(renderer.domElement);
+    }
+    function setLight() {
+      light = new THREE.AmbientLight(0xffffff); // soft white light
+      scene.add(light);
+    }
+    function loadGLTF() {
+      let Loader = new GLTFLoader();
+      Loader.load('./modelo/pruebacuy.gltf', (gltf) => {
+        Mesh = gltf.scene;
+        Mesh.scale.set(0.1,0.1,0.1);
+        scene.add(Mesh);
+        Mesh.position.x = 0;
+        Mesh.position.y = 1.5;
+        Mesh.position.z = 0;
+      });
+    }
+    function animate() {
+      requestAnimationFrame(animate);
+      // Mesh.rotation.x += 0.01;
+	    Mesh.rotation.y += 0.03;
+
+	    if(keyboard[87]){ // W key
+	    	camera.position.x -= Math.sin(camera.rotation.y) * player.speed;
+	    	camera.position.z -= -Math.cos(camera.rotation.y) * player.speed;
+	    }
+	    if(keyboard[83]){ // S key
+	    	camera.position.x += Math.sin(camera.rotation.y) * player.speed;
+	    	camera.position.z += -Math.cos(camera.rotation.y) * player.speed;
+	    }
+	    if(keyboard[65]){ // A key
+	    	// Redirect motion by 90 degrees
+	    	camera.position.x += Math.sin(camera.rotation.y + Math.PI/2) * player.speed;
+	    	camera.position.z += -Math.cos(camera.rotation.y + Math.PI/2) * player.speed;
+	    }
+	    if(keyboard[68]){ // D key
+	    	camera.position.x += Math.sin(camera.rotation.y - Math.PI/2) * player.speed;
+	    	camera.position.z += -Math.cos(camera.rotation.y - Math.PI/2) * player.speed;
+	    }
+    
+	    // Keyboard turn inputs
+	    if(keyboard[37]){ // left arrow key
+	    	camera.rotation.y -= player.turnSpeed;
+	    }
+	    if(keyboard[39]){ // right arrow key
+	    	camera.rotation.y += player.turnSpeed;
+	    }
+      renderer.render(scene, camera);
+    }
+    function keyDown(event){
+	    keyboard[event.keyCode] = true;
+    }
+
+    function keyUp(event){
+    	keyboard[event.keyCode] = false;
+    }
+    window.addEventListener('keydown', keyDown);
+    window.addEventListener('keyup', keyUp);
+    init();
+    setLight();
+    loadGLTF();
+    animate();
+    </script>
+  </body>
+</html>

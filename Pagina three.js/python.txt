@@ -1,0 +1,37 @@
+import machine
+import network
+wifi_ssid = "nombre_de_tu_red_wifi"
+wifi_password = "contraseña_de_tu_red_wifi"
+
+sta_if = network.WLAN(network.STA_IF)
+sta_if.active(True)
+sta_if.connect(wifi_ssid, wifi_password)
+
+while not sta_if.isconnected():
+    pass
+
+print('Conexión Wi-Fi exitosa')
+button_pin = machine.Pin(2, machine.Pin.IN, machine.Pin.PULL_UP)
+def button_callback(pin):
+    if not pin.value():
+        print('Botón presionado')
+        
+button_pin.irq(trigger=machine.Pin.IRQ_FALLING, handler=button_callback)
+
+import microWebSrv
+
+# Función de manejo de peticiones HTTP
+def http_handler(request, response):
+    response.WriteResponseOk("Hola desde el servidor web en Raspberry Pi Pico W!")
+
+# Configuración del servidor web
+srv = microWebSrv.WebServer(webPath="/www")
+srv.MaxWebSocketRecvLen     = 256
+srv.WebSocketThreaded       = False
+srv.AcceptWebSocketCallback = None
+srv.Start()
+
+# Función de manejo de peticiones HTTP
+def http_handler(request, response):
+    with open('index.html', 'r') as file:
+        content
